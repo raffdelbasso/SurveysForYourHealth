@@ -15,5 +15,9 @@
         public static function registraUtente($cognome, $nome, $email, $password, $tipoUtente) {
             return "CALL registraUtente('$cognome', '$nome', '$email', '$password', '$tipoUtente')";
         }
+
+        public static function mostraPediatri() {
+            return "CALL mostraPediatri()";
+        }
     }
 ?>

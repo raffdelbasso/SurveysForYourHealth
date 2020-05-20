@@ -32,5 +32,15 @@
             }
         }
 
+        public function mostraPediatri() {
+            $pediatri = array();
+            $sql = DBQuery::mostraPediatri();
+            $recordSet = DBHandler::getAll($sql);
+            for ($i=0; $i<count($recordSet); $i++) {
+                array_push($pediatri, new Utente($recordSet[$i][0], $recordSet[$i][1], $recordSet[$i][2], $recordSet[$i][3], $recordSet[$i][5]));
+            }
+            return $pediatri;
+        }
+
     }
 ?>

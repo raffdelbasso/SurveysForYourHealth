@@ -11,6 +11,6 @@
         $_SESSION['utenteConnesso'] = $utenteConnesso;
         header("Location: menuPrincipale.php");
     } else {
-        header("Location: login.php?errore=1");
+        header("Location: login.php?msg=1");
     }
 ?>

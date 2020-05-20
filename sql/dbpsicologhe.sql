@@ -126,3 +126,10 @@ create procedure registraUtente (in cognome varchar(50), in nome varchar(50), in
 insert into utenti(utenti.cognome, utenti.nome, utenti.email, utenti.password, utenti.tipoUtente) values
 (cognome, nome, email, password, tipoUtente)$$
 DELIMITER ;
+
+DELIMITER $$
+create procedure mostraPediatri ()
+select *
+from utenti
+where tipoUtente = 3$$
+DELIMITER ;

@@ -10,7 +10,7 @@
     $gestoreUtente = new GestoreUtente();
     $risultato = $gestoreUtente->registraUtente($cognome, $nome, $email, $password, $tipoUtente);
     if ($risultato == 0) {
-        header("Location: login.php?errore=2");
+        header("Location: login.php?msg=2");
     } else {
         header("Location: registrazione.php?errore=1&tipo=$tipoUtente");
     }

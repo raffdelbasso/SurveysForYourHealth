@@ -29,10 +29,10 @@
 			</div>
         </form>
         <?php
-            if (isset($_GET['errore']) && $_GET['errore'] == 1) {
+            if (isset($_GET['msg']) && $_GET['msg'] == 1) {
                 echo "<h3 align='center'>Login errato.</h3>";
             }
-            if (isset($_GET['errore']) && $_GET['errore'] == 2) {
+            if (isset($_GET['msg']) && $_GET['msg'] == 2) {
                 echo "<h3 align='center'>Account creato.</h3>";
             }
         ?>

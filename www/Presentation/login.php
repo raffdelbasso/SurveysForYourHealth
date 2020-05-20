@@ -16,7 +16,7 @@
 
 <body>
     <div id="canvas" class="card container-md">
-        <img id="logo" src="" alt="">
+        <img id="logo" src="../../src/GranAutismo.png" alt="">
         <form action="scriptLogin.php" method="POST" class="container-sm" style="max-width: 300px">
             <div class="form-group">
                 <input type="email" name="email" class="form-control" placeholder="Indirizzo email" required>

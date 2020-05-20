@@ -30,8 +30,8 @@ create table utenti(
     email varchar(255) not null,
     password char(32) not null,
     tipoUtente int not null,
-    codPsicologo int,
-    foreign key(codPsicologo) references utenti(idUtente)
+    codPediatra int,
+    foreign key(codPediatra) references utenti(idUtente)
 );
 
 create table figli(

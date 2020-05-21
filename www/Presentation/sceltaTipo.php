@@ -4,7 +4,7 @@
         header("Location: menuPrincipale.php");
     }
 ?>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">

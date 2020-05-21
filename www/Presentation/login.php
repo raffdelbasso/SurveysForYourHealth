@@ -1,10 +1,11 @@
 <?php
+    // Controllo se l'utente è già loggato. Se è così, lo reindirizzo al menù principale.
     session_start();
     if (isset($_SESSION['utenteConnesso'])) {
         header("Location: menuPrincipale.php");
     }
 ?>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
@@ -29,9 +30,11 @@
 			</div>
         </form>
         <?php
+            // Se nell'URL c'è un valore passato con la GET uguale ad 1: login errato.
             if (isset($_GET['msg']) && $_GET['msg'] == 1) {
                 echo "<h3 align='center'>Login errato.</h3>";
             }
+            // Se nell'URL c'è un valore passato con la GET uguale ad 2: account creato.
             if (isset($_GET['msg']) && $_GET['msg'] == 2) {
                 echo "<h3 align='center'>Account creato.</h3>";
             }

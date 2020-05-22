@@ -4,7 +4,7 @@ use dbpsicologhe;
 
 create table questionari (
     idQuestionario int primary key not null auto_increment,
-    nome varchar(30) not null 
+    nome varchar(100) not null 
 );
 
 create table domande(

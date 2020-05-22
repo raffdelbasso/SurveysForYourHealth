@@ -1,7 +1,7 @@
 use dbpsicologhe;
 
 DELIMITER $$
-create procedure effettuaLogin (in email varchar(255), in password char(32))
+create procedure if not exists effettuaLogin (in email varchar(255), in password char(32))
 select *
 from utenti
 where utenti.email = email and
@@ -9,21 +9,47 @@ where utenti.email = email and
 DELIMITER ;
 
 DELIMITER $$
-create procedure cercaUtentePerEmail (in email varchar(255))
+create procedure if not exists cercaUtentePerEmail (in email varchar(255))
 select *
 from utenti
 where utenti.email = email$$
 DELIMITER ;
 
 DELIMITER $$
-create procedure registraUtente (in cognome varchar(50), in nome varchar(50), in email varchar(255), in password char(32), in tipoUtente int)
+create procedure if not exists registraUtente (in cognome varchar(50), in nome varchar(50), in email varchar(255), in password char(32), in tipoUtente int)
 insert into utenti(utenti.cognome, utenti.nome, utenti.email, utenti.password, utenti.tipoUtente) values
 (cognome, nome, email, password, tipoUtente)$$
 DELIMITER ;
 
 DELIMITER $$
-create procedure mostraPediatri ()
+create procedure if not exists mostraPediatri ()
 select *
 from utenti
 where tipoUtente = 3$$
+DELIMITER ;
+
+DELIMITER $$
+create procedure if not exists mostraQuestionari ()
+select *
+from questionari$$
+DELIMITER ;
+
+DELIMITER $$
+create procedure if not exists mostraDomande (in idQuestionario int)
+select *
+from questionari, domande
+where questionari.idQuestionario = codQuestionario and
+	  codQuestionario = idQuestionario$$
+DELIMITER ;
+
+DELIMITER $$
+create procedure if not exists inserisciQuestionario (in nome varchar(100))
+insert into questionari(questionari.nome) values
+(nome)$$
+DELIMITER ;
+
+DELIMITER $$
+create procedure if not exists inserisciDomanda (in testo varchar(255), in immagine varchar(255), in codQuestionario int)
+insert into domande(domande.testo, domande.immagine, domande.codQuestionario) values
+(testo, immagine, codQuestionario)$$
 DELIMITER ;

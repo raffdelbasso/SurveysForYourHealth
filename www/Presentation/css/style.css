@@ -6,7 +6,8 @@ html, body, * {
 .img-tipo-utente {
     max-width: 150px;
     max-height: 150px;
-    margin: 20px;
+    margin: auto;
+	display: block;
 }
 
 .btn-tipo-utente {

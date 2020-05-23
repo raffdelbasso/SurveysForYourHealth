@@ -3,16 +3,26 @@ html, body, * {
     margin: 0;
 }
 
-.row {
+.img-tipo-utente {
+    max-width: 150px;
+    max-height: 150px;
+    margin: 20px;
 }
 
-#canvas {
-    padding-top: 100px;
-    padding-bottom: 80px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #FBFBFB;
-    margin: 0;
+.btn-tipo-utente {
+    padding: 20px;
 }
+
+/* Centra verticalmente il canvas sui tablet e i desktop */
+@media only screen and (min-width: 768px) {
+    #canvas {
+        padding-top: 100px;
+        padding-bottom: 80px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #FBFBFB;
+        margin: 0;
+    }
+  }

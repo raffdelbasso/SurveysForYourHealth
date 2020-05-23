@@ -20,21 +20,25 @@
         <h2 align='center'>Registrati come:</h2>
         
         <div class="row px-lg-4">
-            <div class="card col-md">
-                <a href="registrazione.php?tipo=1">
-                        <h2 align='center'>Genitore</h2>
+            
+            <div align="center" class="card col-md">
+                <img src="..\..\resources\img\genitori2.svg" alt="" class="img-tipo-utente">
+                <a class="stretched-link" href="registrazione.php?tipo=1">
+                    <h2 align='center'>Genitore</h2>
                 </a>
             </div>
             
-            <div class="card col-md">
-                <a href="registrazione.php?tipo=2">
-                        <h2 align='center'>Psicologo</h2>
+            <div align="center" class="card col-md">
+            <img src="..\..\resources\img\psicologo2.png" alt="" class=" img-tipo-utente">
+                <a class="stretched-link" href="registrazione.php?tipo=2">
+                    <h2 align='center'>Psicologo</h2>
                 </a>
             </div>
             
-            <div class="card col-md">
-                <a href="registrazione.php?tipo=3">
-                        <h2 align='center'>Pediatra</h2>
+            <div align="center" class="card col-md">
+                <img src="..\..\resources\img\pediatra2.svg" alt="" class=" img-tipo-utente">
+                <a class="stretched-link" href="registrazione.php?tipo=3">
+                    <h2 align='center'>Pediatra</h2>
                 </a>
             </div>  
         </div>

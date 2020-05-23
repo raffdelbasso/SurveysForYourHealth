@@ -14,7 +14,7 @@
 	if (isset($_POST['codPediatra'])) {
 		$codPediatra = $_POST['codPediatra'];
 	} else {
-		$codPediatra = null;
+		$codPediatra = 'null';
 	}
     // Richiamo del metodo registraUtente(): restituisce un valore numerico.
     // 0: tutto apposto

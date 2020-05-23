@@ -12,8 +12,8 @@
             return "CALL cercaUtentePerEmail('$email')";
         }
 
-        public static function registraUtente($cognome, $nome, $email, $password, $tipoUtente) {
-            return "CALL registraUtente('$cognome', '$nome', '$email', '$password', '$tipoUtente')";
+        public static function registraUtente($cognome, $nome, $email, $password, $tipoUtente, $codPediatra) {
+            return "CALL registraUtente('$cognome', '$nome', '$email', '$password', '$tipoUtente', $codPediatra)";
         }
 
         public static function mostraPediatri() {

@@ -20,13 +20,13 @@
             }
         }
 
-        public function registraUtente($cognome, $nome, $email, $password, $tipoUtente) {
+        public function registraUtente($cognome, $nome, $email, $password, $tipoUtente, $codPediatra) {
             $sql = DBQuery::cercaUtentePerEmail($email);
             $utente = DBHandler::getRow($sql);
             if ($utente != null) {
                 return 1;
             } else {
-                $sql = DBQuery::registraUtente($cognome, $nome, $email, $password, $tipoUtente);
+                $sql = DBQuery::registraUtente($cognome, $nome, $email, $password, $tipoUtente, $codPediatra);
                 DBHandler::executeQuery($sql);
                 return 0;
             }

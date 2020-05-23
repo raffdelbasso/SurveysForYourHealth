@@ -18,7 +18,7 @@
     <div id="canvas" class="card container-md">
         <img id="logo" src="" alt="">
         <h2 align='center'>Registrati come:</h2>
-        
+        <br>
         <div class="row px-lg-4">
             
             <div align="center" class="card col-md">

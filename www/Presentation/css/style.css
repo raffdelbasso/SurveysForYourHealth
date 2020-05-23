@@ -7,7 +7,9 @@ html, body, * {
     max-width: 150px;
     max-height: 150px;
     margin: auto;
-	display: block;
+    display: block;
+    padding: 15px;
+    transform: translateY(5px);
 }
 
 .btn-tipo-utente {

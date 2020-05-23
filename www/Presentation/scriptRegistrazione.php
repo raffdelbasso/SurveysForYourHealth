@@ -11,10 +11,15 @@
     $password = md5($_POST['password']);
     $tipoUtente = $_POST['tipoUtente'];
     $gestoreUtente = new GestoreUtente();
+	if (isset($_POST['codPediatra'])) {
+		$codPediatra = $_POST['codPediatra'];
+	} else {
+		$codPediatra = null;
+	}
     // Richiamo del metodo registraUtente(): restituisce un valore numerico.
     // 0: tutto apposto
     // 1: email già inserita
-    $risultato = $gestoreUtente->registraUtente($cognome, $nome, $email, $password, $tipoUtente);
+    $risultato = $gestoreUtente->registraUtente($cognome, $nome, $email, $password, $tipoUtente, $codPediatra);
     if ($risultato == 0) {
         header("Location: login.php?msg=2");
     } else {

@@ -18,21 +18,26 @@
     <div id="canvas" class="card container-md">
         <img id="logo" src="" alt="">
         <h2 align='center'>Registrati come:</h2>
-        <a href="registrazione.php?tipo=1">
-            <div class="card container-md">
-                <h2 align='center'>Genitore</h2>
+        
+        <div class="row px-lg-4">
+            <div class="card col-md">
+                <a href="registrazione.php?tipo=1">
+                        <h2 align='center'>Genitore</h2>
+                </a>
             </div>
-        </a>
-        <a href="registrazione.php?tipo=2">
-            <div class="card container-md">
-                <h2 align='center'>Psicologo</h2>
+            
+            <div class="card col-md">
+                <a href="registrazione.php?tipo=2">
+                        <h2 align='center'>Psicologo</h2>
+                </a>
             </div>
-        </a>
-        <a href="registrazione.php?tipo=3">
-            <div class="card container-md">
-                <h2 align='center'>Pediatra</h2>
-            </div>
-        </a>
+            
+            <div class="card col-md">
+                <a href="registrazione.php?tipo=3">
+                        <h2 align='center'>Pediatra</h2>
+                </a>
+            </div>  
+        </div>
         <p style="text-align: center; margin-top: 20px">Sei già registrato? <a href="login.php">Accedi ora</a></p>
     </div>
 </body>

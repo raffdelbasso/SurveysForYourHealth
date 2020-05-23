@@ -22,6 +22,17 @@ insert into utenti(utenti.cognome, utenti.nome, utenti.email, utenti.password, u
 DELIMITER ;
 
 DELIMITER $$
+create procedure if not exists modificaUtente (in idUtente int, in nuovoCognome varchar(50), in nuovoNome varchar(50), in nuovaEmail varchar(255), in nuovaPassword char(32), in nuovoPediatra int)
+update utenti
+set cognome = nuovoCognome,
+nome = nuovoNome,
+email = nuovaEmail,
+password = nuovaPassword,
+codPediatra = nuovoPediatra
+where utenti.idUtente = idUtente$$
+DELIMITER ;
+
+DELIMITER $$
 create procedure if not exists mostraPediatri ()
 select *
 from utenti
@@ -43,6 +54,14 @@ where questionari.idQuestionario = codQuestionario and
 DELIMITER ;
 
 DELIMITER $$
+create procedure if not exists mostraOpzioni (in idDomanda int)
+select *
+from opzioni, domande
+where domande.idDomanda = codDomanda and
+	  codDomanda = idDomanda$$
+DELIMITER ;
+
+DELIMITER $$
 create procedure if not exists inserisciQuestionario (in nome varchar(100))
 insert into questionari(questionari.nome) values
 (nome)$$
@@ -52,4 +71,10 @@ DELIMITER $$
 create procedure if not exists inserisciDomanda (in testo varchar(255), in immagine varchar(255), in codQuestionario int)
 insert into domande(domande.testo, domande.immagine, domande.codQuestionario) values
 (testo, immagine, codQuestionario)$$
+DELIMITER ;
+
+DELIMITER $$
+create procedure if not exists inserisciOpzione (in testo varchar(50), in punteggio int, in codDomanda int)
+insert into opzioni(opzioni.testo, opzioni.punteggio, opzioni.codDomanda) values
+(testo, punteggio, codDomanda)$$
 DELIMITER ;

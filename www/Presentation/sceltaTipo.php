@@ -22,21 +22,21 @@
         <div class="row px-lg-4">
             
             <div align="center" class="card col-md">
-                <img src="..\..\resources\img\genitori2.svg" alt="" class="img-tipo-utente">
+                <img src="..\..\resources\img\genitore.svg" alt="" class="img-tipo-utente">
                 <a class="stretched-link" href="registrazione.php?tipo=1">
                     <h2 align='center'>Genitore</h2>
                 </a>
             </div>
             
             <div align="center" class="card col-md">
-            <img src="..\..\resources\img\psicologo2.svg" alt="" class=" img-tipo-utente">
+            <img src="..\..\resources\img\psicologo.svg" alt="" class=" img-tipo-utente">
                 <a class="stretched-link" href="registrazione.php?tipo=2">
                     <h2 align='center'>Psicologo</h2>
                 </a>
             </div>
             
             <div align="center" class="card col-md">
-                <img src="..\..\resources\img\pediatra2.svg" alt="" class=" img-tipo-utente">
+                <img src="..\..\resources\img\pediatra.svg" alt="" class=" img-tipo-utente">
                 <a class="stretched-link" href="registrazione.php?tipo=3">
                     <h2 align='center'>Pediatra</h2>
                 </a>

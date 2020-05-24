@@ -17,7 +17,7 @@
 
 <body>
     <div id="canvas" class="card container-md">
-        <img id="logo" src="../../resources/img/logo.png" class="img-logo" alt="">
+        <img id="logo" src="../../resources/img/logo.svg" class="img-logo" alt="">
         <form action="scriptLogin.php" method="POST" class="container-sm" style="max-width: 300px">
             <div class="form-group">
                 <input type="email" name="email" class="form-control" placeholder="Indirizzo email" required>
@@ -40,6 +40,14 @@
             }
         ?>
         <p style="text-align: center; margin-top: 20px">Sei un nuovo utente? <a href="sceltaTipo.php">Registrati ora</a></p>
+        <table align='center' class="spazio-loghi">
+            <tr>
+                <td> <a href="https://www.marconibari.it" target="_blank"> <img id="logo2" src="../../resources/img/marconi.jpg" class="img-footer" alt=""> </a> </td>
+                <td> <a href="https://www.uniba.it" target="_blank"> <img id="logo3" src="../../resources/img/uniba.jpg" class="img-footer" alt=""> </a> </td>
+            </tr>
+            </table>
+        <div class="inline-block">
+        </div>
     </div>
 </body>
 

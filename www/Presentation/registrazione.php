@@ -65,7 +65,7 @@ if (!isset($_GET['tipo'])) {
 
                 echo "<div class=\"form-group\">
                     <select name=\"codPediatra\" class=\"custom-select\" id=\"input-seleziona-pediatra\" required>
-                    <option selected>Seleziona il tuo pediatra...</option>";
+                    <option selected value=\"\">Seleziona il tuo pediatra...</option>";
                 $gestoreUtente = new GestoreUtente();
                 $pediatri = $gestoreUtente->mostraPediatri();
                 $nPediatri = count($pediatri);

@@ -12,6 +12,14 @@ html, body, * {
     transform: translateY(5px);
 }
 
+.img-logo {
+    max-width: 600px;
+    max-height: 400px;
+    margin: auto;
+    display: block;
+	padding: 0px 0px 30px 0px;
+}
+
 .btn-tipo-utente {
     padding: 20px;
 }

@@ -28,7 +28,7 @@
             if ($gestoreUtente->numeroFigli($utente->getIdUtente()) == 0) {
                 require "formPrimoFiglio.php";
             } else {
-                require "menuGenitore.php";
+                header("Location: menuGenitore.php");
             }
         }
     ?>

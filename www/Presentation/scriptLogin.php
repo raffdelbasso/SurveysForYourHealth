@@ -14,7 +14,7 @@
     // Se l'utente è stato trovato:
     if ($utenteConnesso != null) {
         // Salvo l'oggetto nel cookie, sotto il nome di 'utenteConnesso'.
-        $_SESSION['utenteConnesso'] = $utenteConnesso;
+        $_SESSION['utenteConnesso'] = serialize($utenteConnesso);
         header("Location: menuPrincipale.php");
     } else {
         // Altrimenti, torno alla pagina login.php passando un valore tramite la GET.

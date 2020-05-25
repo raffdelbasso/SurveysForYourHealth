@@ -19,5 +19,13 @@
         public static function mostraPediatri() {
             return "CALL mostraPediatri()";
         }
+
+        public static function numeroFigli($idUtente) {
+            return "CALL numeroFigli($idUtente)";
+        }
+
+        public static function registraFiglio($cognome, $nome, $dataNascita, $codUtente) {
+            return "CALL registraFiglio('$cognome', '$nome', '$dataNascita', $codUtente)";
+        }
     }
 ?>

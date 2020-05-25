@@ -41,6 +41,17 @@
             }
             return $pediatri;
         }
+        
+        public function numeroFigli($idUtente) {
+            $sql = DBQuery::numeroFigli($idUtente);
+            $numeroUtenti = DBHandler::getValue($sql);
+            return $numeroUtenti;
+        }
+
+        public function registraFiglio($cognome, $nome, $dataNascita, $codUtente) {
+            $sql = DBQuery::registraFiglio($cognome, $nome, $dataNascita, $codUtente);
+            DBHandler::executeQuery($sql);
+        }
 
     }
 ?>

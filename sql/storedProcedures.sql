@@ -78,3 +78,16 @@ create procedure if not exists inserisciOpzione (in testo varchar(50), in punteg
 insert into opzioni(opzioni.testo, opzioni.punteggio, opzioni.codDomanda) values
 (testo, punteggio, codDomanda)$$
 DELIMITER ;
+
+DELIMITER $$
+create procedure if not exists numeroFigli(in idUtente int)
+select count(*)
+from utenti, figli
+where utenti.idUtente = codUtente and utenti.idUtente = idUtente$$
+DELIMITER ;
+
+DELIMITER $$
+create procedure if not exists registraFiglio(in cognome varchar(50), in nome varchar(50), in dataNascita date, in codUtente int)
+insert into figli(figli.cognome, figli.nome, figli.dataNascita, figli.codUtente) values
+(cognome, nome, dataNascita, codUtente)$$
+DELIMITER ;

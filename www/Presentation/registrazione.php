@@ -31,7 +31,6 @@ if (!isset($_GET['tipo'])) {
 
 <body>
     <div id="canvas" class="card container-md">
-        <img id="logo" src="" alt="">
         <h2 align='center'>Registrazione</h2>
 
         <?php

@@ -31,6 +31,8 @@ $gestoreUtente = new GestoreUtente();
         <h2 align='center'>Modifica account</h2>
         <br>
         <form action="scriptModificaAccount.php" method="POST" class="container-sm" style="max-width: 400px">
+            <input type="hidden" name="idUtente" value=<?php echo "" . $utente->getIdUtente() . ""; ?>>
+            <input type="hidden" name="tipoUtente" value=<?php echo "" . $utente->getTipoUtente() . ""; ?>>
             <div class="form-row form-group">
                 <div class="col">
                     <input type="text" name="nome" class="form-control" placeholder="Nome" required value=<?php echo "\"" . $utente->getNome() . "\""; ?>>
@@ -66,25 +68,28 @@ $gestoreUtente = new GestoreUtente();
                 <input type="email" name="email" class="form-control" placeholder="Indirizzo email" required value=<?php echo "" . $utente->getEmail() . ""; ?>>
             </div>
             <div class="form-group">
-                <input type="password" name="vecchia-password" class="form-control" placeholder="Vecchia password" required>
+                <input type="password" name="vecchiaPassword" class="form-control" placeholder="Vecchia password" required>
             </div>
             <div class="form-group">
-                <input type="password" name="nuova-password" class="form-control" placeholder="Nuova password" id="input-password-registrazione" required>
+                <input type="password" name="nuovaPassword" class="form-control" placeholder="Nuova password" id="input-password-registrazione" required>
             </div>
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="check-mostra-psw" onclick="mostraPassword()">
                 <label for="check-mostra-psw" class="form-check-label user-select-none">Mostra password</label>
             </div>
-
+            <?php
+                echo "<br>";
+                if (isset($_GET['errore']) && $_GET['errore'] == 1) {
+                    echo "<h3 align='center'>Email già utilizzata.</h3>";
+                } elseif (isset($_GET['errore']) && $_GET['errore'] == 2) {
+                    echo "<h3 align='center'>Vecchia password errata.</h3>";
+                }
+                echo "<br>";
+            ?>
             <div class="mt-2" align='center'>
                 <button type="submit" class="btn btn-primary">Registrati</button>
             </div>
         </form>
-        <?php
-        if (isset($_GET['errore'])) {
-            echo "<h3 align='center'>Email già utilizzata.</h3>";
-        }
-        ?>
     </div>
 
     <script src="js/script.js"></script>

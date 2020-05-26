@@ -27,5 +27,13 @@
         public static function registraFiglio($cognome, $nome, $dataNascita, $codUtente) {
             return "CALL registraFiglio('$cognome', '$nome', '$dataNascita', $codUtente)";
         }
+
+        public static function modificaUtente($idUtente, $cognome, $nome, $email, $nuovaPassword, $codPediatra) {
+            return "CALL modificaUtente($idUtente, '$cognome', '$nome', '$email', '$nuovaPassword', $codPediatra)";
+        }
+
+        public static function verificaPassword($idUtente, $password) {
+            return "CALL verificaPassword($idUtente, '$password')";
+        }
     }
 ?>

@@ -53,5 +53,26 @@
             DBHandler::executeQuery($sql);
         }
 
+        public function modificaUtente($idUtente, $cognome, $nome, $email, $vecchiaPassword, $nuovaPassword, $codPediatra) {
+            $sql = DBQuery::verificaPassword($idUtente, $vecchiaPassword);
+            echo $sql;
+            $utente = DBHandler::getRow($sql);
+            if ($utente != null) {
+                $sql = DBQuery::cercaUtentePerEmail($email);
+                echo $sql;
+                $utente = DBHandler::getRow($sql);
+                if ($utente != null) {
+                    return 1;
+                } else {
+                    $sql = DBQuery::modificaUtente($idUtente, $cognome, $nome, $email, $nuovaPassword, $codPediatra);
+                    echo $sql;
+                    DBHandler::executeQuery($sql);
+                    return 0;
+                }
+            } else {
+                return 2;
+            }
+        }
+
     }
 ?>

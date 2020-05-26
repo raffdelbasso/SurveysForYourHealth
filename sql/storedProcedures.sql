@@ -91,3 +91,11 @@ create procedure if not exists registraFiglio(in cognome varchar(50), in nome va
 insert into figli(figli.cognome, figli.nome, figli.dataNascita, figli.codUtente) values
 (cognome, nome, dataNascita, codUtente)$$
 DELIMITER ;
+
+DELIMITER $$
+create procedure if not exists verificaPassword(in idUtente int, in password char(32))
+select *
+from utenti
+where utenti.idUtente = idUtente and
+	  utenti.password = password$$
+DELIMITER ;

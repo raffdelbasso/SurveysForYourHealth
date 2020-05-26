@@ -6,7 +6,7 @@
     if (!isset($_SESSION['utenteConnesso'])) {
         header("Location: login.php");
     } else {
-        $utente = unserialize($_SESSION['utenteConnesso']);
+        $utente = ($_SESSION['utenteConnesso']);
     }
     $gestoreUtente = new GestoreUtente();
 ?>

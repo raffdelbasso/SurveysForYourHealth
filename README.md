@@ -26,5 +26,5 @@ source C:\xampp\htdocs\SurveysForYourHealth\sql\storedProcedures.sql
 ### 4. Apertura del software
 Avvia il servizio di Apache dal pannello di controllo di XAMPP (cliccando su "Start" in corrispondenza di Apache), apri un browser qualsiasi e recati al seguente indirizzo:
 ```
-localhost/SurveysForYourHealth/www/Presentation/login.php
+localhost/SurveysForYourHealth/www/Presentation/formLogin.php
 ```

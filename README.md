@@ -3,7 +3,7 @@ Il software offre uno strumento semplice per determinare precocemente se un bamb
 ## Procedura di installazione
 ### 1. Software necessari
 * [XAMPP](https://www.apachefriends.org/it/index.html)
-* [Git](https://git-scm.com/download/win)
+* [Git](https://git-scm.com/download/)
 ### 2. Download del software
 Apri la Git Bash e clona l'intero progetto nella cartella C:\xampp\htdocs usando i seguenti comandi nel terminale:
 ```

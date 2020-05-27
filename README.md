@@ -13,7 +13,7 @@ cd C:\xampp\htdocs
 git clone https://github.com/raffdelbasso/SurverysForYourHealth
 ```
 ### 3. Creazione del database
-Avvia il servizio di MySQL dal pannello di controllo di XAMPP (cliccando su "Start" in corrispondenza di MySQL) ed esegui gli script di creazione del database digitando i seguenti comandi nella shell (disponibile sulla parte sinistra del pannello di controllo di XAMPP):
+Avvia il servizio di MySQL dal pannello di controllo di XAMPP (cliccando su "Start" in corrispondenza di MySQL) ed esegui gli script di creazione del database digitando i seguenti comandi nella shell (disponibile sulla destra del pannello di controllo di XAMPP):
 ```
 mysql -u root
 ```

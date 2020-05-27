@@ -10,7 +10,7 @@ Apri la Git Bash e clona l'intero progetto nella cartella C:\xampp\htdocs usando
 cd C:\xampp\htdocs
 ```
 ```
-git clone https://github.com/raffdelbasso/SurverysForYourHealth
+git clone https://github.com/raffdelbasso/SurveysForYourHealth
 ```
 ### 3. Creazione del database
 Avvia il servizio di MySQL dal pannello di controllo di XAMPP (cliccando su "Start" in corrispondenza di MySQL) ed esegui gli script di creazione del database digitando i seguenti comandi nella shell (disponibile sulla destra del pannello di controllo di XAMPP):

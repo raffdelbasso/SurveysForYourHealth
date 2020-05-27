@@ -3,27 +3,28 @@ Il software offre uno strumento semplice per determinare precocemente se un bamb
 ## Procedura di installazione
 ### 1. Software necessari
 * [XAMPP](https://www.apachefriends.org/it/index.html)
+* [Git](https://git-scm.com/download/win)
 ### 2. Download del software
-Clona il progetto nella cartella C:\xampp\htdocs usando i seguenti comandi nel terminale:
+Apri la Git Bash e clona l'intero progetto nella cartella C:\xampp\htdocs usando i seguenti comandi nel terminale:
 ```
 cd C:\xampp\htdocs
 ```
 ```
-git clone https://github.com/raffdelbasso/psicologhe5IA
+git clone https://github.com/raffdelbasso/SurverysForYourHealth
 ```
 ### 3. Creazione del database
-Avvia il servizio di MySQL dal pannello di controllo di XAMPP ed esegui gli script di creazione del database digitando i seguenti comandi nel terminale:
+Avvia il servizio di MySQL dal pannello di controllo di XAMPP (cliccando su "Start" in corrispondenza di MySQL) ed esegui gli script di creazione del database digitando i seguenti comandi nella shell (disponibile sulla parte sinistra del pannello di controllo di XAMPP):
 ```
 mysql -u root
 ```
 ```
-source C:\xampp\htdocs\psicologhe5IA\sql\dbpsicologhe.sql
+source C:\xampp\htdocs\SurveysForYourHealth\sql\dbpsicologhe.sql
 ```
 ```
-source C:\xampp\htdocs\psicologhe5IA\sql\storedProcedures.sql
+source C:\xampp\htdocs\SurveysForYourHealth\sql\storedProcedures.sql
 ```
 ### 4. Apertura del software
-Avvia il servizio di Apache dal pannello di controllo di XAMPP, apri un browser e recati al seguente indirizzo:
+Avvia il servizio di Apache dal pannello di controllo di XAMPP (cliccando su "Start" in corrispondenza di Apache), apri un browser qualsiasi e recati al seguente indirizzo:
 ```
-localhost/psicologhe5IA/www/Presentation/login.php
+localhost/SurveysForYourHealth/www/Presentation/login.php
 ```

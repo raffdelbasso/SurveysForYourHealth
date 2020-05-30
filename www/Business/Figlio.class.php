@@ -1,15 +1,13 @@
 <?php
-class Genitore {
+class Figlio {
 	private $idFiglio;
 	private $cognome;
 	private $nome;
-	private $genitore;
     
-    public function __construct($idFiglio, $cognome, $nome, $genitore){
+    public function __construct($idFiglio, $cognome, $nome){
         $this->idFiglio = $idFiglio;
         $this->cognome = $cognome;
         $this->nome = $nome;
-		$this->genitore = $genitore;
     }
     
 	public function getIdFiglio(){
@@ -34,14 +32,6 @@ class Genitore {
 
 	public function setNome($nome){
 		$this->nome = $nome;
-	}
-
-	public function getGenitore(){
-		return $this->genitore;
-	}
-
-	public function setGenitore($genitore){
-		$this->genitore = $genitore;
 	}
     
 }

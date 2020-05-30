@@ -5,8 +5,12 @@
     session_start();
     if (!isset($_SESSION['utenteConnesso'])) {
         header("Location: index.php");
+    } else {
+        $utente = unserialize($_SESSION['utenteConnesso']);
     }
     $gestoreUtente = new GestoreUtente();
+    $gestoreQuestionario = new GestoreQuestionario();
+    $_SESSION['questionarioScelto'] = $gestoreQuestionario->cercaQuestionarioPerId($_GET['id']);
 ?>
 
 <html>
@@ -15,7 +19,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <link rel="stylesheet" href="css/style.css">
-        <title>Menu principale</title>
+        <title>Seleziona figlio</title>
     </head>
 
     <body>
@@ -34,14 +38,27 @@
         </div>
     </nav>
     <div id="canvas" class="card container-md">
-        <h2 align='center'>Seleziona questionario da compilare:</h2>
         <?php
-            $gestoreQuestionario = new GestoreQuestionario();
-            $questionari = $gestoreQuestionario->mostraQuestionari();
-            for ($i=0; $i<count($questionari); $i++) {
-                echo "<a align='center' href='formSelezionaFiglio.php?id=".$questionari[$i]->getIdQuestionario()."'>".$questionari[$i]->getNome()."</a>";
+            echo "<h2 align='center'>".$_SESSION['questionarioScelto']->getNome()."</h2>";
+            $figli = $gestoreUtente->mostraFigli($utente->getIdUtente());
+            echo "<form align='center' action=\"formCompilaQuestionario.php\" method=\"POST\" class=\"container-sm\" style=\"max-width: 400px\">
+                  <select name='idFiglio' required>
+                  <option value=''>Seleziona il figlio...</option>";
+            for ($i=0; $i<count($figli); $i++) {
+                $nome = $figli[$i]->getNome();
+                $cognome = $figli[$i]->getCognome();
+                $id = $figli[$i]->getIdFiglio();
+                echo "<option value=\"$id\">$nome $cognome</option>";
             }
         ?>
+            </select>
+            <div class="mt-2" align='center'>
+                <button type="submit" class="btn btn-primary">Continua</button>
+            </div>
+        </form>
+        <div class="mt-2" align='center'>
+            <button onclick="window.location.href='menuPrincipale.php'" class="btn btn-primary">Torna indietro</button>
+        </div>
     </div>
     </body>
 

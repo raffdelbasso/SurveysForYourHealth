@@ -46,6 +46,13 @@ from questionari$$
 DELIMITER ;
 
 DELIMITER $$
+create procedure if not exists cercaQuestionarioPerId(in idQuestionario int)
+select *
+from questionari
+where questionari.idQuestionario = idQuestionario$$
+DELIMITER ;
+
+DELIMITER $$
 create procedure if not exists mostraDomande (in idQuestionario int)
 select *
 from questionari, domande
@@ -55,10 +62,11 @@ DELIMITER ;
 
 DELIMITER $$
 create procedure if not exists mostraOpzioni (in idDomanda int)
-select *
-from opzioni, domande
-where domande.idDomanda = codDomanda and
-	  codDomanda = idDomanda$$
+select idOpzioneInDomanda, opzioni.testo, punteggio
+from opzioni, domande, opzioniInDomande
+where codDomanda = domande.idDomanda and
+	  idOpzione = codOpzione and
+	  domande.idDomanda = idDomanda$$
 DELIMITER ;
 
 DELIMITER $$
@@ -80,8 +88,21 @@ insert into opzioni(opzioni.testo, opzioni.punteggio, opzioni.codDomanda) values
 DELIMITER ;
 
 DELIMITER $$
+create procedure if not exists registraRisposta(in dataOra datetime, in codFiglio int, in codOpzioneInDomanda int)
+insert into risposte(risposte.dataOra, risposte.codFiglio, risposte.codOpzioneInDomanda) values
+(dataOra, codFiglio, codOpzioneInDomanda)$$
+DELIMITER ;
+
+DELIMITER $$
 create procedure if not exists numeroFigli(in idUtente int)
 select count(*)
+from utenti, figli
+where utenti.idUtente = codUtente and utenti.idUtente = idUtente$$
+DELIMITER ;
+
+DELIMITER $$
+create procedure if not exists mostraFigli(in idUtente int)
+select idFiglio, figli.nome, figli.cognome
 from utenti, figli
 where utenti.idUtente = codUtente and utenti.idUtente = idUtente$$
 DELIMITER ;
@@ -98,4 +119,20 @@ select *
 from utenti
 where utenti.idUtente = idUtente and
 	  utenti.password = password$$
+DELIMITER ;
+
+DELIMITER $$
+create procedure if not exists calcolaPunteggioCritico(in dataOra datetime)
+select sum(punteggio)
+from risposte, opzioniInDomande
+where idOpzioneInDomanda = codOpzioneInDomanda and
+	  codDomanda in(2, 7, 9, 13, 14, 15) and risposte.dataOra = dataOra$$
+DELIMITER ;
+
+DELIMITER $$
+create procedure if not exists calcolaPunteggioTotale(in dataOra datetime)
+select sum(punteggio)
+from risposte, opzioniInDomande
+where idOpzioneInDomanda = codOpzioneInDomanda and
+	  risposte.dataOra = dataOra$$
 DELIMITER ;

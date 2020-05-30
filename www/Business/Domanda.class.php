@@ -5,11 +5,10 @@ class Domanda {
     private $immagine;
 	private $opzioni;
     
-    public function __construct($idDomanda, $testo, $immagine){
+    public function __construct($idDomanda, $testo){
         $this->idDomanda = $idDomanda;
         $this->testo = $testo;
-        $this->immagine = $immagine;
-		$opzioni = array();
+		$this->opzioni = array();
     }
     
     public function getIdDomanda() {
@@ -37,15 +36,15 @@ class Domanda {
     }
 	
 	public function addOpzione($opzione) {
-		array_push($opzioni, $opzione);
+		array_push($this->opzioni, $opzione);
 	}
 	
 	public function getOpzioneAt($i) {
-		return $opzioni[$i];
+		return $this->opzioni[$i];
 	}
 	
 	public function numOpzioni() {
-		return count($opzioni);
+		return count($this->opzioni);
 	}
 }
 ?>

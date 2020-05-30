@@ -74,5 +74,31 @@
             }
         }
 
+        public function mostraFigli($idUtente) {
+            $figli = array();
+            $sql = DBQuery::mostraFigli($idUtente);
+            $recordSet = DBHandler::getAll($sql);
+            for ($i=0; $i<count($recordSet); $i++) {
+                array_push($figli, new Figlio($recordSet[$i][0], $recordSet[$i][2], $recordSet[$i][1]));
+            }
+            return $figli;
+        }
+
+        public function registraRisposta($dataOra, $codFiglio, $codOpzioneInDomanda) {
+            $sql = DBQuery::registraRisposta($dataOra, $codFiglio, $codOpzioneInDomanda);
+            DBHandler::executeQuery($sql);
+        }
+
+        public function calcolaPunteggioCritico($dataOra) {
+            $sql = DBQuery::calcolaPunteggioCritico($dataOra);
+            $punteggio = DBHandler::getValue($sql);
+            return $punteggio;
+        }
+
+        public function calcolaPunteggioTotale($dataOra) {
+            $sql = DBQuery::calcolaPunteggioTotale($dataOra);
+            $punteggio = DBHandler::getValue($sql);
+            return $punteggio;
+        }
     }
 ?>

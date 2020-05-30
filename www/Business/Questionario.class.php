@@ -4,10 +4,10 @@ class Questionario {
     private $nome;
 	private $domande;
     
-    public function __construct($idQuestionario){
+    public function __construct($idQuestionario, $nome){
         $this->idQuestionario = $idQuestionario;
         $this->nome = $nome;
-		$domande = array();
+        $this->domande = array();
     }
     
     public function getIdQuestionario() {
@@ -27,15 +27,15 @@ class Questionario {
     }
 	
 	public function addDomanda($domanda) {
-		array_push($domande, $domanda);
+		array_push($this->domande, $domanda);
 	}
 	
 	public function getDomandaAt($i) {
-		return $domande[$i];
+		return $this->domande[$i];
 	}
 	
 	public function numDomande() {
-		return count($domande);
+		return count($this->domande);
 	}
     
 }

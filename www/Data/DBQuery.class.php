@@ -24,6 +24,10 @@
             return "CALL numeroFigli($idUtente)";
         }
 
+        public static function mostraFigli($idUtente) {
+            return "CALL mostraFigli($idUtente)";
+        }
+
         public static function registraFiglio($cognome, $nome, $dataNascita, $codUtente) {
             return "CALL registraFiglio('$cognome', '$nome', '$dataNascita', $codUtente)";
         }
@@ -34,6 +38,34 @@
 
         public static function verificaPassword($idUtente, $password) {
             return "CALL verificaPassword($idUtente, '$password')";
+        }
+
+        public static function mostraQuestionari() {
+            return "CALL mostraQuestionari()";
+        }
+
+        public static function cercaQuestionarioPerId($id) {
+            return "CALL cercaQuestionarioPerId($id)";
+        }
+
+        public static function mostraDomande($idQuestionario) {
+            return "CALL mostraDomande($idQuestionario)";
+        }
+
+        public static function mostraOpzioni($idDomanda) {
+            return "CALL mostraOpzioni($idDomanda)";
+        }
+
+        public static function registraRisposta($dataOra, $codFiglio, $codOpzioneInDomanda) {
+            return "CALL registraRisposta('$dataOra', $codFiglio, $codOpzioneInDomanda)";
+        }
+
+        public static function calcolaPunteggioCritico($dataOra) {
+            return "CALL calcolaPunteggioCritico('$dataOra')";
+        }
+
+        public static function calcolaPunteggioTotale($dataOra) {
+            return "CALL calcolaPunteggioTotale('$dataOra')";
         }
     }
 ?>

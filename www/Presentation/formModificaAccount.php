@@ -90,8 +90,10 @@ $gestoreUtente = new GestoreUtente();
                 <button type="submit" class="btn btn-primary">Registrati</button>
             </div>
         </form>
+        <div class="mt-2" align='center'>
+            <button onclick="window.location.href='menuPrincipale.php'" class="btn btn-primary">Torna indietro</button>
+        </div>
     </div>
-
     <script src="js/script.js"></script>
 </body>
 

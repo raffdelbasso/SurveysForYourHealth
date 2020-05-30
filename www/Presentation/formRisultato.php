@@ -8,11 +8,12 @@
     } else {
         $utente = unserialize($_SESSION['utenteConnesso']);
     }
-    $gestoreUtente = new GestoreUtente();
-    $gestoreQuestionario = new GestoreQuestionario();
-    $questionarioScelto = $_SESSION['questionarioScelto'];
+    if (!isset($_GET['msg'])) {
+        header("Location: menuPrincipale.php");
+    } else {
+        $questionarioScelto = $_SESSION['questionarioScelto'];
+    }
 ?>
-
 <html>
     <head>
         <meta charset="UTF-8">
@@ -21,7 +22,6 @@
         <link rel="stylesheet" href="css/style.css">
         <title>Compila questionario</title>
     </head>
-
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -37,29 +37,20 @@
                 </li>
             </div>
         </nav>
-    <form action="scriptCalcolaPunteggio.php" method="POST">
-    <input type="hidden" name='idFiglio' value=<?php echo "'". $_POST['idFiglio'] . "'"; ?>></input>
-        <div>
+        <div id="canvas" align='center' class="card container-md">
             <?php
-                $cont = 0;
                 echo "<h2 align='center'>".$questionarioScelto->getNome()."</h2>";
-                $questionarioScelto = $gestoreQuestionario->riempiQuestionario($questionarioScelto);
-                for ($i=0; $i<$questionarioScelto->numDomande(); $i++) {
-                    echo "<p class\"text-left\">".($i+1).") ".$questionarioScelto->getDomandaAt($i)->getTesto()."</p>";
-                    echo "<div>";
-                        echo "<div class=\"form-check\">";
-                    for ($j=0; $j<$questionarioScelto->getDomandaAt($i)->numOpzioni(); $j++) {
-                        $opzione = $questionarioScelto->getDomandaAt($i)->getOpzioneAt($j);
-                        echo "<input name=\"domanda".$questionarioScelto->getDomandaAt($i)->getIdDomanda()."\" type=\"radio\" id=\"radio".($cont)."\" value='".$opzione->getIdOpzione()."' required></input>";    
-                            echo "<label for=\"radio".($cont)."\">".$opzione->getTesto()."</label><br>";
-                        $cont++;
-                    }
-                        echo "</div>";
-                    echo "</div>";
+                echo "<h2 align='center'>Risultato:</h2>";
+                if ($_GET['msg'] == 0) {
+                    echo "<p>Suo figlio non è a rischio.</p>";
+                } else {
+                    echo "<p>Suo figlio è a rischio. È consigliato rivolgersi da uno specialista per ulteriori controlli.</p>";
                 }
+                $_SESSION['questionarioScelto'] = "";
             ?>
-            <input type="submit" value="Conferma"></input>
+            <div class="mt-2" align='center'>
+                <button onclick="window.location.href='menuPrincipale.php'" class="btn btn-primary">Torna indietro</button>
+            </div>
         </div>
     </body>
-
 </html>

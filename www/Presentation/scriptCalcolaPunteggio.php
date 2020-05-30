@@ -8,25 +8,25 @@
     spl_autoload_register(function ($class) {
         require_once '../Business/' . $class . '.class.php';
     });
-    $codFiglio = $_GET["idFiglio"];
+    $codFiglio = $_POST["idFiglio"];
     $i=1;
-    while(!isset($_GET['domanda'.$i])) {
+    while(!isset($_POST['domanda'.$i])) {
         $i++;
     }
     $dataOra = date('Y-m-d H:i:s');
-    while (isset($_GET['domanda'.$i])) {
+    while (isset($_POST['domanda'.$i])) {
         $gestoreUtente = new GestoreUtente();
-        $gestoreUtente->registraRisposta($dataOra, $codFiglio, $_GET['domanda'.$i]);
+        $gestoreUtente->registraRisposta($dataOra, $codFiglio, $_POST['domanda'.$i]);
         $i++;
     }
 
     if ($gestoreUtente->calcolaPunteggioCritico($dataOra) > 1 ) {
-        echo "AUTISTICO";
+        header("Location: formRisultato.php?msg=1");
     } else {
         if ($gestoreUtente->calcolaPunteggioTotale($dataOra) > 2) {
-            echo "AUTISTICO";
+            header("Location: formRisultato.php?msg=1");
         } else {
-            echo "NON AUTISTICO";
+            header("Location: formRisultato.php?msg=0");
         }
     }
 ?>

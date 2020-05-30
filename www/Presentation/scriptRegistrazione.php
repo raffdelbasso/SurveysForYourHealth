@@ -1,7 +1,7 @@
 <?php
     session_start();
     if (!isset($_SESSION['utenteConnesso'])) {
-        header("Location: login.php");
+        header("Location: index.php");
     }
     // Importazione delle classi presenti al livello di Business.
     spl_autoload_register(function ($class) {
@@ -25,8 +25,8 @@
     // 1: email già inserita
     $risultato = $gestoreUtente->registraUtente($cognome, $nome, $email, $password, $tipoUtente, $codPediatra);
     if ($risultato == 0) {
-        header("Location: login.php?msg=2");
+        header("Location: index.php?msg=2");
     } else {
-        header("Location: registrazione.php?errore=1&tipo=$tipoUtente");
+        header("Location: formRegistrazione.php?errore=1&tipo=$tipoUtente");
     }
 ?>

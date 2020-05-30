@@ -1,7 +1,7 @@
 <?php
     session_start();
     if (!isset($_SESSION['utenteConnesso'])) {
-        header("Location: login.php");
+        header("Location: index.php");
     }
     // Importazione delle classi presenti al livello di Business.
     spl_autoload_register(function ($class) {
@@ -25,8 +25,8 @@
         $_SESSION['utenteConnesso'] = serialize(new Utente($idUtente, $cognome, $nome, $email, $_POST['tipoUtente']));
         header("Location: menuPrincipale.php");
     } elseif ($risultato == 1) {
-        header("Location: modificaAccount.php?errore=1");
+        header("Location: formModificaAccount.php?errore=1");
     } elseif ($risultato == 2) {
-        header("Location: modificaAccount.php?errore=2");
+        header("Location: formModificaAccount.php?errore=2");
     }
 ?>

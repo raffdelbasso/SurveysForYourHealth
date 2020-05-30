@@ -25,5 +25,5 @@ source C:\xampp\htdocs\psicologhe5IA\sql\storedProcedures.sql
 ### 4. Apertura del software
 Avvia il servizio di Apache dal pannello di controllo di XAMPP, apri un browser e recati al seguente indirizzo:
 ```
-localhost/psicologhe5IA/www/Presentation/login.php
+localhost/psicologhe5IA/www/Presentation/index.php
 ```

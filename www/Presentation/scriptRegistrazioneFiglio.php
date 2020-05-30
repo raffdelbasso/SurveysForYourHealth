@@ -1,7 +1,7 @@
 <?php
     session_start();
     if (!isset($_SESSION['utenteConnesso'])) {
-        header("Location: login.php");
+        header("Location: index.php");
     }
     spl_autoload_register(function ($class) {
         require_once '../Business/' . $class . '.class.php';

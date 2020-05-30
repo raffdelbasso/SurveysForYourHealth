@@ -3,5 +3,5 @@
     // e viene reindirizzato alla pagina di login.
     session_start();
     session_unset();
-    header("Location: login.php");
+    header("Location: index.php");
 ?>

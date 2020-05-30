@@ -4,7 +4,7 @@
     });
     session_start();
     if (!isset($_SESSION['utenteConnesso'])) {
-        header("Location: login.php");
+        header("Location: index.php");
     } else {
         $utente = ($_SESSION['utenteConnesso']);
     }
@@ -31,10 +31,10 @@
                 <a class="nav-link" href="modificaFigli.php">I tuoi figli</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="modificaAccount.php">Modifica account</a>
+                <a class="nav-link" href="formModificaAccount.php">Modifica account</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="logout.php">Esci</a>
+                <a class="nav-link" href="scriptLogout.php">Esci</a>
             </li>
         </div>
     </nav>

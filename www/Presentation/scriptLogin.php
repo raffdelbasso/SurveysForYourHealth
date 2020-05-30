@@ -17,7 +17,7 @@
         $_SESSION['utenteConnesso'] = serialize($utenteConnesso);
         header("Location: menuPrincipale.php");
     } else {
-        // Altrimenti, torno alla pagina login.php passando un valore tramite la GET.
-        header("Location: login.php?msg=1");
+        // Altrimenti, torno alla pagina index.php passando un valore tramite la GET.
+        header("Location: index.php?msg=1");
     }
 ?>

@@ -23,26 +23,26 @@
             
             <div align="center" class="card col-md">
                 <img src="..\..\resources\img\genitore.svg" alt="" class="img-tipo-utente">
-                <a class="stretched-link" href="registrazione.php?tipo=1">
+                <a class="stretched-link" href="formRegistrazione.php?tipo=1">
                     <h2 align='center'>Genitore</h2>
                 </a>
             </div>
             
             <div align="center" class="card col-md">
             <img src="..\..\resources\img\psicologo.svg" alt="" class=" img-tipo-utente">
-                <a class="stretched-link" href="registrazione.php?tipo=2">
+                <a class="stretched-link" href="formRegistrazione.php?tipo=2">
                     <h2 align='center'>Psicologo</h2>
                 </a>
             </div>
             
             <div align="center" class="card col-md">
                 <img src="..\..\resources\img\pediatra.svg" alt="" class=" img-tipo-utente">
-                <a class="stretched-link" href="registrazione.php?tipo=3">
+                <a class="stretched-link" href="formRegistrazione.php?tipo=3">
                     <h2 align='center'>Pediatra</h2>
                 </a>
             </div>  
         </div>
-        <p style="text-align: center; margin-top: 20px">Sei già registrato? <a href="login.php">Accedi ora</a></p>
+        <p style="text-align: center; margin-top: 20px">Sei già registrato? <a href="index.php">Accedi ora</a></p>
     </div>
 </body>
 

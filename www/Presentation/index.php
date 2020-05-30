@@ -39,7 +39,7 @@
                 echo "<h3 align='center'>Account creato.</h3>";
             }
         ?>
-        <p style="text-align: center; margin-top: 20px">Sei un nuovo utente? <a href="sceltaTipo.php">Registrati ora</a></p>
+        <p style="text-align: center; margin-top: 20px">Sei un nuovo utente? <a href="formSceltaTipo.php">Registrati ora</a></p>
         <table align='center' class="spazio-loghi">
             <tr>
                 <td> <a href="https://www.marconibari.it" target="_blank"> <img id="logo2" src="../../resources/img/marconi.jpg" class="img-footer" alt=""> </a> </td>

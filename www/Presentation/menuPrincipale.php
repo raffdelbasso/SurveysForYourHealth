@@ -4,7 +4,7 @@
     });
     session_start();
     if (!isset($_SESSION['utenteConnesso'])) {
-        header("Location: login.php");
+        header("Location: index.php");
     } else {
         $utente = unserialize($_SESSION['utenteConnesso']);
     }

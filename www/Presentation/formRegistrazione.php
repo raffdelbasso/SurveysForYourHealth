@@ -10,12 +10,12 @@ if (isset($_SESSION['utenteConnesso'])) {
 }
 // Controllo della presenza del tipo utente
 if (!isset($_GET['tipo'])) {
-    header("Location: sceltaTipo.php");
+    header("Location: formSceltaTipo.php");
 } else {
     // Controllo che sia un tipo utente esistente
     $tipo = $_GET['tipo'];
     if ($tipo < 1 || $tipo > 3) {
-        header("Location: sceltaTipo.php");
+        header("Location: formSceltaTipo.php");
     }
 }
 ?>
@@ -42,11 +42,9 @@ if (!isset($_GET['tipo'])) {
             $stringaTipo = 'Pediatra';
         }
 
-        echo "<p align=\"center\">Ti stai registrando come: <a href=\"sceltaTipo.php\">$stringaTipo</a></p>"
+        echo "<p align=\"center\">Ti stai registrando come: <a href=\"formSceltaTipo.php\">$stringaTipo</a></p>"
 
         ?>
-
-
 
         <form action="scriptRegistrazione.php" method="POST" class="container-sm" style="max-width: 400px">
             <input type="hidden" name="tipoUtente" value=<?php echo $_GET['tipo']; ?>>
@@ -102,7 +100,7 @@ if (!isset($_GET['tipo'])) {
             echo "<h3 align='center'>Email già utilizzata.</h3>";
         }
         ?>
-        <p style="text-align: center; margin-top: 20px">Sei già registrato? <a href="login.php">Accedi ora</a></p>
+        <p style="text-align: center; margin-top: 20px">Sei già registrato? <a href="index.php">Accedi ora</a></p>
     </div>
 
     <script src="js/script.js"></script>

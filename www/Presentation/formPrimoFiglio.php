@@ -1,6 +1,6 @@
 <?php
     if (!isset($_SESSION['utenteConnesso'])) {
-        header("Location: login.php");
+        header("Location: index.php");
     }
 ?>
 <h3 align='center'>Inserisci i dati di tuo figlio.</h2>

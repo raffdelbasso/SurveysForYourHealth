@@ -20,7 +20,7 @@
 		$codPediatra = 'null';
 	}
     $gestoreUtente = new GestoreUtente();
-    $risultato = $gestoreUtente->modificaUtente($idUtente, $cognome, $nome, $email, $vecchiaPassword, $nuovaPassword, $codPediatra);
+    $risultato = $gestoreUtente->modificaUtente($idUtente, $cognome, $nome, $email, $_POST['vecchiaEmail'], $vecchiaPassword, $nuovaPassword, $codPediatra);
     if ($risultato == 0) {
         $_SESSION['utenteConnesso'] = serialize(new Utente($idUtente, $cognome, $nome, $email, $_POST['tipoUtente']));
         header("Location: menuPrincipale.php");

@@ -32,6 +32,7 @@ $gestoreUtente = new GestoreUtente();
         <br>
         <form action="scriptModificaAccount.php" method="POST" class="container-sm" style="max-width: 400px">
             <input type="hidden" name="idUtente" value=<?php echo "" . $utente->getIdUtente() . ""; ?>>
+            <input type="hidden" name="vecchiaEmail" value=<?php echo "" . $utente->getEmail() . ""; ?>>
             <input type="hidden" name="tipoUtente" value=<?php echo "" . $utente->getTipoUtente() . ""; ?>>
             <div class="form-row form-group">
                 <div class="col">

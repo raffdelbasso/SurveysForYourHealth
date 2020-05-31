@@ -20,10 +20,10 @@
         $i++;
     }
 
-    if ($gestoreUtente->calcolaPunteggioCritico($dataOra) > 1 ) {
+    if ($gestoreUtente->calcolaPunteggioCritico($codFiglio, $dataOra) > 1 ) {
         header("Location: formRisultato.php?msg=1");
     } else {
-        if ($gestoreUtente->calcolaPunteggioTotale($dataOra) > 2) {
+        if ($gestoreUtente->calcolaPunteggioTotale($codFiglio, $dataOra) > 2) {
             header("Location: formRisultato.php?msg=1");
         } else {
             header("Location: formRisultato.php?msg=0");

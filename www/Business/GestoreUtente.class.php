@@ -86,14 +86,14 @@
             DBHandler::executeQuery($sql);
         }
 
-        public function calcolaPunteggioCritico($dataOra) {
-            $sql = DBQuery::calcolaPunteggioCritico($dataOra);
+        public function calcolaPunteggioCritico($codFiglio, $dataOra) {
+            $sql = DBQuery::calcolaPunteggioCritico($codFiglio, $dataOra);
             $punteggio = DBHandler::getValue($sql);
             return $punteggio;
         }
 
-        public function calcolaPunteggioTotale($dataOra) {
-            $sql = DBQuery::calcolaPunteggioTotale($dataOra);
+        public function calcolaPunteggioTotale($codFiglio, $dataOra) {
+            $sql = DBQuery::calcolaPunteggioTotale($codFiglio, $dataOra);
             $punteggio = DBHandler::getValue($sql);
             return $punteggio;
         }

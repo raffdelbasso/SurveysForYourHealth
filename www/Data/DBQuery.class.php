@@ -60,12 +60,12 @@
             return "CALL registraRisposta('$dataOra', $codFiglio, $codOpzioneInDomanda)";
         }
 
-        public static function calcolaPunteggioCritico($dataOra) {
-            return "CALL calcolaPunteggioCritico('$dataOra')";
+        public static function calcolaPunteggioCritico($codFiglio, $dataOra) {
+            return "CALL calcolaPunteggioCritico($codFiglio, '$dataOra')";
         }
 
-        public static function calcolaPunteggioTotale($dataOra) {
-            return "CALL calcolaPunteggioTotale('$dataOra')";
+        public static function calcolaPunteggioTotale($codFiglio, $dataOra) {
+            return "CALL calcolaPunteggioTotale($codFiglio, '$dataOra')";
         }
     }
 ?>

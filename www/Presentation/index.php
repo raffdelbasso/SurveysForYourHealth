@@ -32,14 +32,14 @@
         <?php
             // Se nell'URL c'è un valore passato con la GET uguale ad 1: login errato.
             if (isset($_GET['msg']) && $_GET['msg'] == 1) {
-                echo "<h3 align='center'>Login errato.</h3>";
+                echo "<h3 align='center' style='padding: 10px 0 0 0; color:#e60000'>Login errato.</h3>";
             }
             // Se nell'URL c'è un valore passato con la GET uguale ad 2: account creato.
             if (isset($_GET['msg']) && $_GET['msg'] == 2) {
-                echo "<h3 align='center'>Account creato.</h3>";
+                echo "<h3 align='center' style='padding: 10px 0 0 0'>Account creato.</h3>";
             }
         ?>
-        <p style="text-align: center; margin-top: 20px">Sei un nuovo utente? <a href="formSceltaTipo.php">Registrati ora</a></p>
+        <p style="text-align: center; margin-top: 5px">Sei un nuovo utente? <a href="formSceltaTipo.php">Registrati ora</a></p>
         <table align='center' class="spazio-loghi">
             <tr>
                 <td style="padding:10px 20px 0 0"> <a href="https://www.marconibari.it" target="_blank"> <img id="logo2" src="../../resources/img/marconi.jpg" class="img-footer" alt=""> </a> </td>

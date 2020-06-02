@@ -42,8 +42,8 @@
         <p style="text-align: center; margin-top: 20px">Sei un nuovo utente? <a href="formSceltaTipo.php">Registrati ora</a></p>
         <table align='center' class="spazio-loghi">
             <tr>
-                <td> <a href="https://www.marconibari.it" target="_blank"> <img id="logo2" src="../../resources/img/marconi.jpg" class="img-footer" alt=""> </a> </td>
-                <td> <a href="https://www.uniba.it" target="_blank"> <img id="logo3" src="../../resources/img/uniba.jpg" class="img-footer" alt=""> </a> </td>
+                <td style="padding:10px 20px 0 0"> <a href="https://www.marconibari.it" target="_blank"> <img id="logo2" src="../../resources/img/marconi.jpg" class="img-footer" alt=""> </a> </td>
+                <td style="padding:10px 0 0 30px"> <a href="https://www.uniba.it" target="_blank"> <img id="logo3" src="../../resources/img/uniba.jpg" class="img-footer" alt=""> </a> </td>
             </tr>
             </table>
         <div class="inline-block">

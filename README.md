@@ -1,4 +1,4 @@
-# S.F.Y.H. - Surverys For Your Health
+# S.F.Y.H. - Surveys For Your Health
 Il software offre uno strumento semplice per effettuare una diagnosi precoce di autismo.
 ## Procedura di installazione
 ### 1. Software necessari

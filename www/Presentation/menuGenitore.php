@@ -35,13 +35,19 @@
     </nav>
     <div id="canvas" class="card container-md">
         <h2 align='center'>Seleziona questionario da compilare:</h2>
-        <?php
+        <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="img/puzzle.jpeg" alt="Card image cap">
+        <div class="card-body">
+        <p class="card-text" align="center">
+         <?php
             $gestoreQuestionario = new GestoreQuestionario();
             $questionari = $gestoreQuestionario->mostraQuestionari();
             for ($i=0; $i<count($questionari); $i++) {
                 echo "<a align='center' href='formSelezionaFiglio.php?id=".$questionari[$i]->getIdQuestionario()."'>".$questionari[$i]->getNome()."</a>";
             }
         ?>
+        </p>
+        </div>
     </div>
     </body>
 

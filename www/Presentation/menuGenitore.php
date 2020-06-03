@@ -33,23 +33,31 @@
             </li>
         </div>
     </nav>
-    <div id="canvas" class="card container-md">
-        <h2 align='center'>Seleziona questionario da compilare:</h2> 
-        <div align="center"> 
-        <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="img/puzzle.jpeg" alt="Card image cap">
-        <div class="card-body">
-        <p class="card-text" align="center">
+    <div id="canvas" class="myCard card container-md">
+        <h2 align='center'>Seleziona questionario da compilare:</h2><br> 
          <?php
             $gestoreQuestionario = new GestoreQuestionario();
             $questionari = $gestoreQuestionario->mostraQuestionari();
             for ($i=0; $i<count($questionari); $i++) {
-                echo "<a align='center' href='formSelezionaFiglio.php?id=".$questionari[$i]->getIdQuestionario()."'>".$questionari[$i]->getNome()."</a>";
+                if ($i % 2 == 0) {
+                    echo "<div class=\"form-row form-group\" align='center'>";
+                }
+                echo "<a align='center' href='formSelezionaFiglio.php?id=".$questionari[$i]->getIdQuestionario()."'>";
+                    echo "<div class='col' style=\"max-width: 50%;\">";
+                        echo "<div class=\"card\" style=\"width: 18rem;\">";
+                            echo "<img class=\"card-img-top\" src=\"img/puzzle.jpeg\" alt=\"Card image cap\">";
+                            echo "<div class=\"card-body\">";
+                                echo "<p class=\"card-text\" align=\"center\">";
+                                    echo $questionari[$i]->getNome()."</a>";
+                                echo "</p>";
+                            echo "</div>";
+                        echo "</div>";
+                    echo "</div>";
+                if ($i % 2 == 1) {
+                    echo "</div>";
+                }
             }
         ?>
-        </p>
-        </div>
-        </div>
     </div>
     </body>
 

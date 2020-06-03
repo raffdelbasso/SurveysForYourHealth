@@ -34,7 +34,7 @@
         </div>
     </nav>
     <div id="canvas" class="card container-md">
-        <h2 align='center'>Seleziona questionario da compilare:</h2>
+        <h2 align='center'>Seleziona questionario da compilare:</h2> 
         <div align="center"> 
         <div class="card" style="width: 18rem;">
         <img class="card-img-top" src="img/puzzle.jpeg" alt="Card image cap">

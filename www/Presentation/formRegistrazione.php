@@ -86,7 +86,7 @@ if (!isset($_GET['tipo'])) {
             <div class="form-group">
                 <input type="password" name="password" class="form-control" placeholder="Password" id="input-password-registrazione" required>
             </div>
-            <div class="form-check">
+            <div class="form-check" style="vertical-align: baseline;" >
                 <input class="form-check-input" type="checkbox" id="check-mostra-psw" onclick="mostraPassword()">
                 <label for="check-mostra-psw" class="form-check-label user-select-none">Mostra password</label>
             </div>

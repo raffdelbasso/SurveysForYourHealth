@@ -41,7 +41,8 @@
         <?php
             echo "<h2 align='center'>".$_SESSION['questionarioScelto']->getNome()."</h2>";
             $figli = $gestoreUtente->mostraFigli($utente->getIdUtente());
-            echo "<form align='center' action=\"formCompilaQuestionario.php\" method=\"POST\" class=\"container-sm\" style=\"max-width: 400px\">
+            echo "<div align='center'> 
+                  <form align='center' action=\"formCompilaQuestionario.php\" method=\"POST\" class=\"container-sm\" style=\"max-width: 400px\">
                   <select name='idFiglio' required>
                   <option value=''>Seleziona il figlio...</option>";
             for ($i=0; $i<count($figli); $i++) {

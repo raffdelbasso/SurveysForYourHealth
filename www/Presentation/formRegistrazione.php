@@ -90,7 +90,7 @@ if (!isset($_GET['tipo'])) {
                     <li class='text-sm-left' id='psw2'><small>La password deve contenere almeno un numero</small></li>
                 </ul>
             </div>
-            <div class="form-check">
+            <div class="form-check" style="vertical-align: baseline;" >
                 <input class="form-check-input" type="checkbox" id="check-mostra-psw" onclick="mostraPassword()">
                 <label for="check-mostra-psw" class="form-check-label user-select-none">Mostra password</label>
             </div>

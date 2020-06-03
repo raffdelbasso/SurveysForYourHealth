@@ -46,7 +46,7 @@ if (!isset($_GET['tipo'])) {
 
         ?>
 
-        <form action="scriptRegistrazione.php" method="POST" class="container-sm" style="max-width: 400px">
+        <form action="scriptRegistrazione.php" id='form-registrazione' method="POST" class="container-sm" style="max-width: 400px">
             <input type="hidden" name="tipoUtente" value=<?php echo $_GET['tipo']; ?>>
             <div class="form-row form-group">
                 <div class="col">
@@ -84,7 +84,11 @@ if (!isset($_GET['tipo'])) {
                 <input type="email" name="email" class="form-control" placeholder="Indirizzo email" required>
             </div>
             <div class="form-group">
-                <input type="password" name="password" class="form-control" placeholder="Password" id="input-password-registrazione" required>
+                <input type="password" name="password" class="form-control" onkeyup="validaPassword()" placeholder="Password" id="input-password-registrazione" required>
+                <ul>
+                    <li class='text-sm-left' id='psw1'><small>La password deve contenere almeno 6 caratteri</small></li>
+                    <li class='text-sm-left' id='psw2'><small>La password deve contenere almeno un numero</small></li>
+                </ul>
             </div>
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="check-mostra-psw" onclick="mostraPassword()">
@@ -92,7 +96,7 @@ if (!isset($_GET['tipo'])) {
             </div>
 
             <div class="mt-2" align='center'>
-                <button type="submit" class="btn btn-primary">Registrati</button>
+                <button type="button" id='button-submit' onclick="inviaForm()" class="btn btn-primary">Registrati</button>
             </div>
         </form>
         <?php

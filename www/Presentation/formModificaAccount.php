@@ -30,7 +30,7 @@ $gestoreUtente = new GestoreUtente();
     <div id="canvas" class="card container-md">
         <h2 align='center'>Modifica account</h2>
         <br>
-        <form action="scriptModificaAccount.php" method="POST" class="container-sm" style="max-width: 400px">
+        <form action="scriptModificaAccount.php" id="form-registrazione" method="POST" class="container-sm" style="max-width: 400px">
             <input type="hidden" name="idUtente" value=<?php echo "" . $utente->getIdUtente() . ""; ?>>
             <input type="hidden" name="vecchiaEmail" value=<?php echo "" . $utente->getEmail() . ""; ?>>
             <input type="hidden" name="tipoUtente" value=<?php echo "" . $utente->getTipoUtente() . ""; ?>>
@@ -69,26 +69,29 @@ $gestoreUtente = new GestoreUtente();
                 <input type="email" name="email" class="form-control" placeholder="Indirizzo email" required value=<?php echo "" . $utente->getEmail() . ""; ?>>
             </div>
             <div class="form-group">
-                <input type="password" name="vecchiaPassword" class="form-control" placeholder="Vecchia password" required>
+                <input type="password" name="vecchiaPassword" class="form-control" onkeyup="validaPassword3()" id='vecchia-password' placeholder="Vecchia password" required>
             </div>
             <div class="form-group">
-                <input type="password" name="nuovaPassword" class="form-control" placeholder="Nuova password" id="input-password-registrazione" required>
+                <input type="password" name="nuovaPassword" class="form-control" onkeyup="validaPassword2()" placeholder="Nuova password" id="input-password-registrazione" required>
+                <ul>
+                    <li class='text-sm-left' id='psw1'><small>La password deve contenere almeno 6 caratteri</small></li>
+                    <li class='text-sm-left' id='psw2'><small>La password deve contenere almeno un numero</small></li>
+                    <li class='text-sm-left' id='psw3'><small>La vecchia e la nuova password devono coincidere</small></li>
+                </ul>
             </div>
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="check-mostra-psw" onclick="mostraPassword()">
                 <label for="check-mostra-psw" class="form-check-label user-select-none">Mostra password</label>
             </div>
             <?php
-                echo "<br>";
                 if (isset($_GET['errore']) && $_GET['errore'] == 1) {
                     echo "<h3 align='center'>Email già utilizzata.</h3>";
                 } elseif (isset($_GET['errore']) && $_GET['errore'] == 2) {
                     echo "<h3 align='center'>Vecchia password errata.</h3>";
                 }
-                echo "<br>";
             ?>
             <div class="mt-2" align='center'>
-                <button type="submit" class="btn btn-primary">Registrati</button>
+                <button type="button" id='button-submit' onclick="inviaForm()" class="btn btn-primary">Modifica account</button>
             </div>
         </form>
         <div class="mt-2" align='center'>

@@ -42,7 +42,8 @@
         <div>
             <?php
                 $cont = 0;
-                echo "<h2 align='center'>".$questionarioScelto->getNome()."</h2>";
+                echo "<h2 align='center'>".$questionarioScelto->getNome()."</h2><br>";
+				echo "<p align='center' class='h5'> NOTA: Tutte le domande sono obbligatorie. </p><br>";
                 $questionarioScelto = $gestoreQuestionario->riempiQuestionario($questionarioScelto);
                 for ($i=0; $i<$questionarioScelto->numDomande(); $i++) {
                     echo "<p class\"text-left\">".($i+1).") ".$questionarioScelto->getDomandaAt($i)->getTesto()."</p>";

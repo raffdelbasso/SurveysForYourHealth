@@ -58,12 +58,9 @@ create table risposte(
     foreign key(codOpzioneInDomanda) references opzioniInDomande(idOpzioneInDomanda)
 );
 
-insert into opzioni(testo) values
-("Si'"),
-("No");
-
+-- Questionario n.1: M-CHAT
 insert into questionari(nome) values
-("Modified Checklist for Autism in Toddlers: M-CHAT");
+("M-CHAT: Modified Checklist for Autism in Toddlers");
 
 insert into domande(testo, codQuestionario) values
 ("Vostro figlio si diverte ad essere dondolato o a saltare sulle vostre ginocchia?", 1),
@@ -89,6 +86,10 @@ insert into domande(testo, codQuestionario) values
 ("Vostro figlio capisce ciò che dicono le persone?", 1),
 ("Vostro figlio qualche volta fissa lo sguardo nel vuoto o girovaga senza scopo?", 1),
 ("Vostro figlio vi guarda in faccia per capire quale è la vostra reazione di fronte a qualcosa di non familiare?", 1);
+
+insert into opzioni(testo) values
+("Si'"),
+("No");
 
 insert into opzioniInDomande(punteggio, codDomanda, codOpzione) values
 (0, 1, 1),

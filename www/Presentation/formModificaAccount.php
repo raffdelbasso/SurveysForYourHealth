@@ -48,20 +48,20 @@ $gestoreUtente = new GestoreUtente();
 
                 echo "<div class=\"form-group\">
                     <select name=\"codPediatra\" class=\"custom-select\" id=\"input-seleziona-pediatra\" required>
-                    <option selected value=\"\">Seleziona il tuo pediatra...</option>";
-                $gestoreUtente = new GestoreUtente();
-                $pediatri = $gestoreUtente->mostraPediatri();
-                $nPediatri = count($pediatri);
+						<option selected value=\"\">Seleziona il tuo pediatra...</option>";
+						$gestoreUtente = new GestoreUtente();
+						$pediatri = $gestoreUtente->mostraPediatri();
+						$nPediatri = count($pediatri);
 
-                for ($i = 0; $i < $nPediatri; $i++) {
-                    $nome = $pediatri[$i]->getNome();
-                    $cognome = $pediatri[$i]->getCognome();
-                    $id = $pediatri[$i]->getIdUtente();
+						for ($i = 0; $i < $nPediatri; $i++) {
+							$nome = $pediatri[$i]->getNome();
+							$cognome = $pediatri[$i]->getCognome();
+							$id = $pediatri[$i]->getIdUtente();
 
-                    echo "<option value=\"$id\">$nome $cognome</option>";
-                }
-                echo "</select>
-            </div>";
+							echo "<option value=\"$id\">$nome $cognome</option>";
+						}
+					echo "</select>
+				</div>";
             }
             ?>
 
@@ -69,14 +69,13 @@ $gestoreUtente = new GestoreUtente();
                 <input type="email" name="email" class="form-control" placeholder="Indirizzo email" required value=<?php echo "" . $utente->getEmail() . ""; ?>>
             </div>
             <div class="form-group">
-                <input type="password" name="vecchiaPassword" class="form-control" onkeyup="validaPassword3()" id='vecchia-password' placeholder="Vecchia password" required>
+                <input type="password" name="vecchiaPassword" class="form-control"" id='vecchia-password' placeholder="Vecchia password" required>
             </div>
             <div class="form-group">
                 <input type="password" name="nuovaPassword" class="form-control" onkeyup="validaPassword2()" placeholder="Nuova password" id="input-password-registrazione" required>
                 <ul>
-                    <li class='text-sm-left' id='psw1'><small>La password deve contenere almeno 6 caratteri</small></li>
-                    <li class='text-sm-left' id='psw2'><small>La password deve contenere almeno un numero</small></li>
-                    <li class='text-sm-left' id='psw3'><small>La vecchia e la nuova password devono coincidere</small></li>
+                    <li class='text-sm-left' id='psw1'><small>La nuova password deve contenere almeno 6 caratteri</small></li>
+                    <li class='text-sm-left' id='psw2'><small>La nuova password deve contenere almeno un numero</small></li>
                 </ul>
             </div>
             <div class="form-check">

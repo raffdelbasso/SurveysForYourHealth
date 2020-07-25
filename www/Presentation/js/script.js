@@ -62,6 +62,12 @@ validaPassword3 = () => {
 
 inviaForm = () => {
     if (tuttoOk) {
-        document.getElementById('form-registrazione').submit();
+		var e = document.getElementById("input-seleziona-pediatra");
+		var strUser = e.options[e.selectedIndex].value;
+		if (e.options[e.selectedIndex].value !== "") {
+			document.getElementById('form-registrazione').submit();
+		} else {
+			e.style = "border: 2px solid red;";	
+		}
     }
 }

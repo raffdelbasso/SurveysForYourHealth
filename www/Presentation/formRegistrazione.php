@@ -96,7 +96,7 @@ if (!isset($_GET['tipo'])) {
             </div>
 
             <div class="mt-2" align='center'>
-                <button type="button" id='button-submit' onclick="inviaForm()" class="btn btn-primary">Registrati</button>
+                <button type="button" id='button-submit' onclick="<?php if ($_GET['tipo'] == 1) { echo "inviaForm()"; } else { echo "inviaForm2()"; }?>" class="btn btn-primary">Registrati</button>
             </div>
         </form>
         <?php

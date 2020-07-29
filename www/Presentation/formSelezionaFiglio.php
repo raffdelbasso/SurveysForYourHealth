@@ -10,7 +10,8 @@
     }
     $gestoreUtente = new GestoreUtente();
     $gestoreQuestionario = new GestoreQuestionario();
-    $_SESSION['questionarioScelto'] = $gestoreQuestionario->cercaQuestionarioPerId($_GET['id']);
+    $_SESSION['questionarioScelto'] = serialize($gestoreQuestionario->cercaQuestionarioPerId($_GET['id']));
+    $questionarioScelto = unserialize($_SESSION['questionarioScelto']);
 ?>
 
 <html>
@@ -39,7 +40,7 @@
     </nav>
     <div id="canvas" class="card container-md">
         <?php
-            echo "<h2 align='center'>".$_SESSION['questionarioScelto']->getNome()."</h2>";
+            echo "<h2 align='center'>".$questionarioScelto->getNome()."</h2>";
             $figli = $gestoreUtente->mostraFigli($utente->getIdUtente());
             echo "<div align='center'> 
                   <form align='center' action=\"formCompilaQuestionario.php\" method=\"POST\" class=\"container-sm\" style=\"max-width: 400px\">

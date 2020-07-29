@@ -11,7 +11,7 @@
     if (!isset($_GET['msg'])) {
         header("Location: menuPrincipale.php");
     } else {
-        $questionarioScelto = $_SESSION['questionarioScelto'];
+        $questionarioScelto = unserialize($_SESSION['questionarioScelto']);
     }
 ?>
 <html>

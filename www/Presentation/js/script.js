@@ -71,3 +71,9 @@ inviaForm = () => {
 		}
     }
 }
+
+inviaForm2 = () => {
+    if (tuttoOk) {
+        document.getElementById('form-registrazione').submit();
+    }
+}

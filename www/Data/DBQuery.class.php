@@ -60,12 +60,16 @@
             return "CALL registraRisposta('$dataOra', $codFiglio, $codOpzioneInDomanda)";
         }
 
-        public static function calcolaPunteggioCritico($codFiglio, $dataOra) {
-            return "CALL calcolaPunteggioCritico($codFiglio, '$dataOra')";
+        public static function calcolaPunteggioCriticoMCHAT($codFiglio, $dataOra) {
+            return "CALL calcolaPunteggioCriticoMCHAT($codFiglio, '$dataOra')";
         }
 
-        public static function calcolaPunteggioTotale($codFiglio, $dataOra) {
-            return "CALL calcolaPunteggioTotale($codFiglio, '$dataOra')";
+        public static function calcolaPunteggioTotaleMCHAT($codFiglio, $dataOra) {
+            return "CALL calcolaPunteggioTotaleMCHAT($codFiglio, '$dataOra')";
+        }
+
+        public static function calcolaPunteggioAbusoMinori($codFiglio, $dataOra) {
+            return "CALL calcolaPunteggioAbusoMinori($codFiglio, '$dataOra')";
         }
     }
 ?>

@@ -139,8 +139,8 @@ where utenti.idUtente = idUtente and
 DELIMITER ;
 
 DELIMITER $$
-drop procedure if exists calcolaPunteggioCritico$$
-create procedure if not exists calcolaPunteggioCritico(in idFiglio int, in dataOra datetime)
+drop procedure if exists calcolaPunteggioCriticoMCHAT$$
+create procedure if not exists calcolaPunteggioCriticoMCHAT(in idFiglio int, in dataOra datetime)
 select sum(punteggio)
 from risposte, opzioniInDomande
 where idOpzioneInDomanda = codOpzioneInDomanda and
@@ -149,8 +149,18 @@ where idOpzioneInDomanda = codOpzioneInDomanda and
 DELIMITER ;
 
 DELIMITER $$
-drop procedure if exists calcolaPunteggioTotale$$
-create procedure if not exists calcolaPunteggioTotale(in idFiglio int, in dataOra datetime)
+drop procedure if exists calcolaPunteggioTotaleMCHAT$$
+create procedure if not exists calcolaPunteggioTotaleMCHAT(in idFiglio int, in dataOra datetime)
+select sum(punteggio)
+from risposte, opzioniInDomande
+where idOpzioneInDomanda = codOpzioneInDomanda and
+	  risposte.dataOra = dataOra and
+	  risposte.codFiglio = idFiglio$$
+DELIMITER ;
+
+DELIMITER $$
+drop procedure if exists calcolaPunteggioAbusoMinori$$
+create procedure if not exists calcolaPunteggioAbusoMinori(in idFiglio int, in dataOra datetime)
 select sum(punteggio)
 from risposte, opzioniInDomande
 where idOpzioneInDomanda = codOpzioneInDomanda and

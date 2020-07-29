@@ -1,13 +1,14 @@
 <?php
+    spl_autoload_register(function ($class) {
+        require_once '../Business/' . $class . '.class.php';
+    });
     session_start();
     if (!isset($_SESSION['utenteConnesso'])) {
         header("Location: index.php");
     } else {
         $utente = unserialize($_SESSION["utenteConnesso"]);
+        $questionario = unserialize($_SESSION['questionarioScelto']);
     }
-    spl_autoload_register(function ($class) {
-        require_once '../Business/' . $class . '.class.php';
-    });
     $codFiglio = $_POST["idFiglio"];
     $i=1;
     while(!isset($_POST['domanda'.$i])) {
@@ -20,13 +21,24 @@
         $i++;
     }
 
-    if ($gestoreUtente->calcolaPunteggioCritico($codFiglio, $dataOra) > 1 ) {
-        header("Location: formRisultato.php?msg=1");
-    } else {
-        if ($gestoreUtente->calcolaPunteggioTotale($codFiglio, $dataOra) > 2) {
+    switch($questionario->getIdQuestionario()) {
+    case '1':
+        if ($gestoreUtente->calcolaPunteggioCriticoMCHAT($codFiglio, $dataOra) > 1 ) {
+            header("Location: formRisultato.php?msg=1");
+        } else {
+            if ($gestoreUtente->calcolaPunteggioTotaleMCHAT($codFiglio, $dataOra) > 2) {
+                header("Location: formRisultato.php?msg=1");
+            } else {
+                header("Location: formRisultato.php?msg=0");
+            }
+        }
+        break;
+    case 2:
+        if ($gestoreUtente->calcolaPunteggioAbusoMinori($codFiglio, $dataOra) > 0) {
             header("Location: formRisultato.php?msg=1");
         } else {
             header("Location: formRisultato.php?msg=0");
         }
     }
+    
 ?>

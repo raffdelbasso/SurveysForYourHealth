@@ -11,6 +11,8 @@
     $gestoreUtente = new GestoreUtente();
     $gestoreQuestionario = new GestoreQuestionario();
     $questionarioScelto = unserialize($_SESSION['questionarioScelto']);
+    $sessoFiglio = $gestoreUtente->ottieniSessoFiglio($_POST['idFiglio']);
+    $_SESSION['sessoFiglio'] = $sessoFiglio;
 ?>
 
 <html>
@@ -43,19 +45,21 @@
         <div>
             <?php
                 $cont = 0;
+                $conteggio = 0;
                 echo "<h2 align='center'>".$questionarioScelto->getNome()."</h2><br>";
 				echo "<p align='center' class='h5'> NOTA: Tutte le domande sono obbligatorie. </p><br>";
-                $questionarioScelto = $gestoreQuestionario->riempiQuestionario($questionarioScelto);
+                $questionarioScelto = $gestoreQuestionario->riempiQuestionario($questionarioScelto, $sessoFiglio);
                 for ($i=0; $i<$questionarioScelto->numDomande(); $i++) {
                     echo "<p class\"text-left\">".($i+1).") ".$questionarioScelto->getDomandaAt($i)->getTesto()."</p>";
                     echo "<div>";
                         echo "<div class=\"form-check\">";
                     for ($j=0; $j<$questionarioScelto->getDomandaAt($i)->numOpzioni(); $j++) {
                         $opzione = $questionarioScelto->getDomandaAt($i)->getOpzioneAt($j);
-                        echo "<input name=\"domanda".$questionarioScelto->getDomandaAt($i)->getIdDomanda()."\" type=\"radio\" id=\"radio".($cont)."\" value='".$opzione->getIdOpzione()."' required></input>";    
+                        echo "<input name=\"domanda$conteggio\" type=\"radio\" id=\"radio".($cont)."\" value='".$opzione->getIdOpzione()."' required></input>";    
                             echo "<label for=\"radio".($cont)."\">".$opzione->getTesto()."</label><br>";
                         $cont++;
                     }
+                    $conteggio++;
                         echo "</div>";
                     echo "</div>";
                 }
@@ -64,6 +68,4 @@
         
         </div>
     </body>
-
-
 </html>

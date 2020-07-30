@@ -10,7 +10,7 @@
         $questionario = unserialize($_SESSION['questionarioScelto']);
     }
     $codFiglio = $_POST["idFiglio"];
-    $i=1;
+    $i=0;
     while(!isset($_POST['domanda'.$i])) {
         $i++;
     }

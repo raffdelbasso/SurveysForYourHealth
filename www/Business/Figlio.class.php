@@ -3,11 +3,13 @@ class Figlio {
 	private $idFiglio;
 	private $cognome;
 	private $nome;
+	private $sesso;
     
-    public function __construct($idFiglio, $cognome, $nome){
+    public function __construct($idFiglio, $cognome, $nome, $sesso){
         $this->idFiglio = $idFiglio;
         $this->cognome = $cognome;
-        $this->nome = $nome;
+		$this->nome = $nome;
+		$this->sesso = $sesso;
     }
     
 	public function getIdFiglio(){
@@ -32,6 +34,14 @@ class Figlio {
 
 	public function setNome($nome){
 		$this->nome = $nome;
+	}
+
+	public function getSesso(){
+		return $this->sesso;
+	}
+
+	public function setSesso($sesso){
+		$this->sesso = $sesso;
 	}
     
 }

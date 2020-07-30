@@ -30,9 +30,9 @@
             return new Questionario($questionario[0], $questionario[1]);
         }
 
-        public function riempiQuestionario($questionarioVecchio) {
+        public function riempiQuestionario($questionarioVecchio, $sessoFiglio) {
             $questionario = new Questionario($questionarioVecchio->getIdQuestionario(), $questionarioVecchio->getNome());
-            $sql = DBQuery::mostraDomande($questionario->getIdQuestionario());
+            $sql = DBQuery::mostraDomande($questionario->getIdQuestionario(), $sessoFiglio);
             $recordSet = DBHandler::getAll($sql);
             for ($i=0; $i<count($recordSet); $i++) {
                 $domanda = new Domanda($recordSet[$i][2], $recordSet[$i][3]);

@@ -44,7 +44,11 @@
                 if ($_GET['msg'] == 0) {
                     echo "<p>Suo figlio non è a rischio.</p>";
                 } else {
-                    echo "<p>Suo figlio è a rischio. È consigliato rivolgersi da uno specialista per ulteriori controlli.</p>";
+                    if ($_SESSION['sessoFiglio'] == 'M') {
+                        echo "<p>Suo figlio è a rischio. È consigliato rivolgersi da uno specialista per ulteriori controlli.</p>";
+                    } else {
+                        echo "<p>Sua figlia è a rischio. È consigliato rivolgersi da uno specialista per ulteriori controlli.</p>";
+                    }
                 }
                 $_SESSION['questionarioScelto'] = "";
             ?>

@@ -28,6 +28,10 @@
             return "CALL mostraFigli($idUtente)";
         }
 
+        public static function ottieniSessoFiglio($idFiglio) {
+            return "CALL ottieniSessoFiglio($idFiglio)";
+        }
+
         public static function registraFiglio($cognome, $nome, $dataNascita, $sesso, $codUtente) {
             return "CALL registraFiglio('$cognome', '$nome', '$dataNascita', '$sesso', $codUtente)";
         }
@@ -48,8 +52,8 @@
             return "CALL cercaQuestionarioPerId($id)";
         }
 
-        public static function mostraDomande($idQuestionario) {
-            return "CALL mostraDomande($idQuestionario)";
+        public static function mostraDomande($idQuestionario, $sessoFiglio) {
+            return "CALL mostraDomande($idQuestionario, '$sessoFiglio')";
         }
 
         public static function mostraOpzioni($idDomanda) {

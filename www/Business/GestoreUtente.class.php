@@ -50,7 +50,6 @@
 
         public function registraFiglio($cognome, $nome, $dataNascita, $sesso, $codUtente) {
             $sql = DBQuery::registraFiglio($cognome, $nome, $dataNascita, $sesso, $codUtente);
-            echo $sql;
             DBHandler::executeQuery($sql);
         }
 
@@ -77,9 +76,15 @@
             $sql = DBQuery::mostraFigli($idUtente);
             $recordSet = DBHandler::getAll($sql);
             for ($i=0; $i<count($recordSet); $i++) {
-                array_push($figli, new Figlio($recordSet[$i][0], $recordSet[$i][2], $recordSet[$i][1]));
+                array_push($figli, new Figlio($recordSet[$i][0], $recordSet[$i][2], $recordSet[$i][1], $recordSet[$i][3]));
             }
             return $figli;
+        }
+
+        public function ottieniSessoFiglio($idFiglio) {
+            $sql = DBQuery::ottieniSessoFiglio($idFiglio);
+            $sesso = DBHandler::getValue($sql);
+            return $sesso;
         }
 
         public function registraRisposta($dataOra, $codFiglio, $codOpzioneInDomanda) {

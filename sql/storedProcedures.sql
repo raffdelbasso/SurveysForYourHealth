@@ -61,11 +61,12 @@ DELIMITER ;
 
 DELIMITER $$
 drop procedure if exists mostraDomande$$
-create procedure if not exists mostraDomande (in idQuestionario int)
+create procedure if not exists mostraDomande (in idQuestionario int, in sesso char(1))
 select *
 from questionari, domande
 where questionari.idQuestionario = codQuestionario and
-	  codQuestionario = idQuestionario$$
+	  codQuestionario = idQuestionario and
+	  sessoDomanda in (sesso, 'E')$$
 DELIMITER ;
 
 DELIMITER $$
@@ -117,9 +118,17 @@ DELIMITER ;
 DELIMITER $$
 drop procedure if exists mostraFigli$$
 create procedure if not exists mostraFigli(in idUtente int)
-select idFiglio, figli.nome, figli.cognome
+select idFiglio, figli.nome, figli.cognome, figli.sesso
 from utenti, figli
 where utenti.idUtente = codUtente and utenti.idUtente = idUtente$$
+DELIMITER ;
+
+DELIMITER $$
+drop procedure if exists ottieniSessoFiglio$$
+create procedure if not exists ottieniSessoFiglio(in idFiglio int)
+select figli.sesso
+from figli
+where figli.idFiglio = idFiglio$$
 DELIMITER ;
 
 DELIMITER $$

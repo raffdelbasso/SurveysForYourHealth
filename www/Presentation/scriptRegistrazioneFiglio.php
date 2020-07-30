@@ -14,5 +14,5 @@
     $codUtente = unserialize($_SESSION['utenteConnesso'])->getIdUtente();
     $gestoreUtente = new GestoreUtente();
     $gestoreUtente->registraFiglio($cognome, $nome, $dataNascita, $sesso, $codUtente);
-    //header("Location: menuPrincipale.php");
+    header("Location: menuPrincipale.php");
 ?>

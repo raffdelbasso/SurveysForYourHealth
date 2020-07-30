@@ -124,9 +124,9 @@ DELIMITER ;
 
 DELIMITER $$
 drop procedure if exists registraFiglio$$
-create procedure if not exists registraFiglio(in cognome varchar(50), in nome varchar(50), in dataNascita date, in codUtente int)
-insert into figli(figli.cognome, figli.nome, figli.dataNascita, figli.codUtente) values
-(cognome, nome, dataNascita, codUtente)$$
+create procedure if not exists registraFiglio(in cognome varchar(50), in nome varchar(50), in dataNascita date, in sesso char(1), in codUtente int)
+insert into figli(figli.cognome, figli.nome, figli.dataNascita, figli.sesso, figli.codUtente) values
+(cognome, nome, dataNascita, sesso, codUtente)$$
 DELIMITER ;
 
 DELIMITER $$

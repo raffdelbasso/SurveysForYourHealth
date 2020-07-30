@@ -14,8 +14,17 @@
             <input type="text" name="cognome" class="form-control" placeholder="Cognome" required>
         </div>
     </div>
-    <div class="form-group">
-        <input type="date" name="dataNascita" class="form-control" placeholder="Data di nascita" required>
+    <div class="form-row form-group">
+        <div class='col'>
+            <select class='form-control' name='sesso' required>
+                <option value="">Seleziona il sesso...</option>
+                <option value="M">Maschio</option>
+                <option value="F">Femmina</option>
+            </select>
+        </div>
+        <div class='col'>
+            <input type="date" name="dataNascita" class="form-control" placeholder="Data di nascita" required>
+        </div>
     </div>
     <h5 align='center'>Potrai aggiungerne altri in seguito.</h4>
     <div class="mt-2" align='center'>

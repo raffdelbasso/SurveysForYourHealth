@@ -44,6 +44,7 @@ create table figli(
     idFiglio int not null primary key auto_increment,
     cognome varchar(50) not null,
     nome varchar(50) not null,
+    sesso char(1) not null,
     dataNascita date not null,
     codUtente int not null,
     foreign key(codUtente) references utenti(idUtente)

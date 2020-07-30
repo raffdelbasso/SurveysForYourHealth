@@ -48,8 +48,9 @@
             return $numeroUtenti;
         }
 
-        public function registraFiglio($cognome, $nome, $dataNascita, $codUtente) {
-            $sql = DBQuery::registraFiglio($cognome, $nome, $dataNascita, $codUtente);
+        public function registraFiglio($cognome, $nome, $dataNascita, $sesso, $codUtente) {
+            $sql = DBQuery::registraFiglio($cognome, $nome, $dataNascita, $sesso, $codUtente);
+            echo $sql;
             DBHandler::executeQuery($sql);
         }
 

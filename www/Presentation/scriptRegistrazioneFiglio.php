@@ -10,8 +10,9 @@
     $cognome = $_POST['cognome'];
     $nome = $_POST['nome'];
     $dataNascita = $_POST['dataNascita'];
+    $sesso = $_POST['sesso'];
     $codUtente = unserialize($_SESSION['utenteConnesso'])->getIdUtente();
     $gestoreUtente = new GestoreUtente();
-    $gestoreUtente->registraFiglio($cognome, $nome, $dataNascita, $codUtente);
-    header("Location: menuPrincipale.php");
+    $gestoreUtente->registraFiglio($cognome, $nome, $dataNascita, $sesso, $codUtente);
+    //header("Location: menuPrincipale.php");
 ?>

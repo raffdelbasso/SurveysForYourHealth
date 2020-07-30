@@ -28,8 +28,8 @@
             return "CALL mostraFigli($idUtente)";
         }
 
-        public static function registraFiglio($cognome, $nome, $dataNascita, $codUtente) {
-            return "CALL registraFiglio('$cognome', '$nome', '$dataNascita', $codUtente)";
+        public static function registraFiglio($cognome, $nome, $dataNascita, $sesso, $codUtente) {
+            return "CALL registraFiglio('$cognome', '$nome', '$dataNascita', '$sesso', $codUtente)";
         }
 
         public static function modificaUtente($idUtente, $cognome, $nome, $email, $nuovaPassword, $codPediatra) {
